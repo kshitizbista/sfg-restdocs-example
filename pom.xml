@@ -140,9 +140,6 @@
                         <configuration>
                             <backend>html</backend>
                             <doctype>book</doctype>
-                            <attributes>
-                                <snippets>${snippetsDirectory}</snippets>
-                            </attributes>
                         </configuration>
                     </execution>
                 </executions>

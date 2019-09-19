@@ -6,6 +6,10 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -37,16 +41,20 @@ public class Beer {
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String beerName;
     private String beerStyle;
 
     @Column(unique = true)
     private Long upc;
 
+    @Positive
+    @NotNull
     private BigDecimal price;
 
     private Integer minOnHand;
+
+    @Positive
     private Integer quantityToBrew;
-
-
 }
